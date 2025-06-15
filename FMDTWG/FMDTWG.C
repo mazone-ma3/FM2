@@ -1,5 +1,5 @@
 /* FM MUSIC SAMPLE for FM TOWNS BIOS版含む */
-/* WatcomC */
+/* GCC */
 /* 参考 PC-9801マシン語サウンドプログラミング、FM TOWNSテクニカルデータブック */
 /* Free386のドキュメント(SND.C) */
 
