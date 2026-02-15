@@ -106,13 +106,27 @@ void wait(int loop)
 }
 
 /* FMレジスタ設定 */
-void set_fm(unsigned char reg, unsigned char data)
+/*void set_fm(unsigned char reg, unsigned char data)
 {
 //	printf("%x = %x\n",reg, data);
 	outp(BASEIO + 8,reg);
-	wait(12);
+	wait(12*300);
 	outp(BASEIO + 9,data);
-	wait(84);
+	wait(84*300);
+}*/
+
+void set_fm(unsigned char reg, unsigned char data)
+{
+	int i;
+	outp(BASEIO + 8, reg);
+	// OPL2の仕様: アドレス指定後は3.3us以上の待ちが必要
+	for(i=0; i<6; i++)
+		inp(0x80); 
+
+	outp(BASEIO + 9, data);
+	// OPL2の仕様: データ書き込み後は23us以上の待ちが必要
+	for(i=0; i<35; i++)
+		inp(0x80);
 }
 
 /* 音程設定 */
