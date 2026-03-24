@@ -9,4 +9,4 @@ z88dk / Open Watcom使用
 
 MMLコンパイラ　 *.hに記述してcomp2.bat *を実行。
 
-PRJ_RAINで改良版を一部使っています。X68000版とFM TOWNS版はそちらも参照してください。
+PRJ_RAIN、PRJ_SEGで改良版を一部使っています。X68000版とFM TOWNS版はそちらも参照してください。
